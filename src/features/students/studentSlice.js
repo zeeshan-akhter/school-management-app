@@ -6,7 +6,7 @@ export const fetchStudents = createAsyncThunk(
   "students/fetchStudents",
   async () => {
     const response = await axios.get(
-      "https://schoolmanagementapi.zeeshanakhter.repl.co/student"
+      "https://148ab4d9-4f00-4906-b5b1-5da8155a2524-00-669v4x3bxj9d.picard.replit.dev/student"
     );
     return response?.data?.data;
   }
@@ -17,7 +17,7 @@ export const addStudentData = createAsyncThunk(
   async (studentData) => {
     console.log({ studentData });
     const response = await axios.post(
-      "https://schoolmanagementapi.zeeshanakhter.repl.co/student",
+      "https://148ab4d9-4f00-4906-b5b1-5da8155a2524-00-669v4x3bxj9d.picard.replit.dev/student",
       studentData
     );
     toast.success(response?.data?.message ?? "Success");
@@ -29,7 +29,7 @@ export const deleteStudentData = createAsyncThunk(
   "students/deleteStudentData",
   async (studentId) => {
     const response = await axios.delete(
-      `https://schoolmanagementapi.zeeshanakhter.repl.co/student/${studentId}`
+      `https://148ab4d9-4f00-4906-b5b1-5da8155a2524-00-669v4x3bxj9d.picard.replit.dev/student/${studentId}`
     );
     toast.success(response?.data?.message ?? "Success");
     return response.data.data;
@@ -40,7 +40,7 @@ export const updateStudent = createAsyncThunk(
   async (payload) => {
     const { id, formData } = payload;
     const response = await axios.post(
-      `https://schoolmanagementapi.zeeshanakhter.repl.co/student/${id}`,
+      `https://148ab4d9-4f00-4906-b5b1-5da8155a2524-00-669v4x3bxj9d.picard.replit.dev/student/${id}`,
       formData
     );
     toast.success(response?.data?.message ?? "Success");
